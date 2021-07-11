@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+          .form{
+          	width: 500px;
+          }
+
+        </style>
+    </head>
+    <body>
+    <form action="">
+    <fieldset >
+    	<legend>用户登录</legend>
+    	<label>登录名: <input type="text" placeholder="请输入"/></label> <br /><br />
+    	<label>电话号<input type="tel" /></label> <br /><br />
+    	<label>邮箱：<input type="email" /></label> <br /><br />
+    	<label>学院 ： <input type="text" placeholder="请选择" list="xueyuan"/>
+    	<datalist id="xueyuan">
+    		<option>Java学院</option>
+    		<option>c学院</option>
+    		<option>php学院</option>
+    		<option>Html学院</option>
+    	</datalist>
+
+    	<br /><br />
+
+    	<label>出生日期：   <input type="date" /></label> <br /><br />
+    	<label> 成绩： <input type="number" /></label> <br /><br />
+    	<label>毕业日期:  <input type="date" /></label> <br /><br />
+    	<input type="submit" />  <input type="reset" />
+    </fieldset>
+    </form>
+    </body>
+</html>

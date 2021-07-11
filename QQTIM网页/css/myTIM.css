@@ -1,0 +1,294 @@
+
+a{
+    /*取消a标签的下划线*/
+	text-decoration: none;
+}
+li{
+	/*取消下划线*/
+	display: inline-block;
+}
+.TIM{
+	width: 100%;
+	height: 1000px;
+	overflow-y: scroll;
+}
+
+/*第一页导航栏部分*/
+
+.one{
+	width: 100%;
+	background: url(../images/tim_bg_1.jpg) no-repeat;
+	overflow: hidden;
+}
+.top{
+    max-width: 1170px;
+    min-width: 980px;
+	width: 100%;
+	height: 75px;
+	margin: 0 auto;
+	position: relative;
+}
+.qqLogo{
+	padding-top: 15px;
+	float: left;
+}
+.nav{
+	margin-left: 50px;
+	width: 400px;
+	height: 100%;
+	float: left;
+}
+.nav li{
+	margin-left: 40px;
+	height: 100%;
+}
+.nav a{
+	color: #333;
+	font-size: 18px;
+	line-height: 75px;   /*设置和top高度一致就可保证字体居中*/
+	text-shadow: 0 1px 2px #333;
+}
+.nav a:hover{
+	background-color: #12b7f5;
+}
+.topR{
+	width: 320px;
+	height: 100%;
+	float: right;
+}
+.zhuc{
+	width: 96px;
+	height: 40px;
+	float: left;
+	background: url(../images/icons.png) no-repeat 0 -244px;
+	display: block;
+	margin-top: 20px;
+}
+.topR ul{
+	width: 224px;
+	float: right;
+	height: 40px;
+}
+.topR li{
+	margin-left: 15px;
+}
+.topR li a{
+	line-height: 40px;
+	font-size: 14px;
+	color: #333;
+	text-shadow: 0 1px 2px #333;
+}
+/*第一页身体部分*/
+.onebd{
+	max-width: 1170px;
+    min-width: 980px;
+	width: 100%;
+	height: 600px;
+	margin: 0 auto;
+}
+.logo{
+	background: url(../images/logo.png) no-repeat;
+	width: 297px;
+    height: 167px;
+    margin: 0 auto;
+}
+.onebd .btn{
+	background: url(../images/btn.png) no-repeat;
+    width: 328px;
+    height: 72px;
+    margin: 4% auto 6%;
+}
+.icon{
+	background: url(../images/icon.png) no-repeat;
+	width: 812px;
+    height: 147px;
+    margin: 30px auto;
+}
+.onef{
+	background: url(../images/doc-j2.png) no-repeat;
+	width: 100%;
+	height: 200px;
+	margin: auto;
+	bottom: 0;
+}
+
+/*第二屏开始*/
+.content h1{
+	width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding-top: 280px;
+    background: #fff url(../images/brand.png) no-repeat center top;
+}
+
+#fisrtbg{
+	background-image: url(../images/fisrtbg.jpg);
+	display: flex;
+}
+/*公共样式*/
+.bdimg{
+	position: relative;
+	width: 100%;
+	height: 600px;
+	background-repeat: no-repeat;
+}
+.more{
+	position: relative;
+    width: 960px;
+    height: 584px;
+    margin: 0 auto;
+}
+.txt{
+	position: absolute;
+    top: 115px;
+    width: 487px;
+}
+.txt h2{
+	width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding-top: 135px;
+}
+.txt p{
+	width: 100%;
+	font-size: 18px;
+	margin-bottom: 12px;
+	text-shadow: 2px 2px 8px #333;
+	line-height: 150%; /*设置行高*/
+}
+
+.txt1{
+	right: 7px;
+}
+.txt1 h2{
+	background: url(../images/qcall_txt.png) no-repeat;
+}
+.txt1 p{
+	text-align: right;
+}
+.knmore{
+	color: #12b7f5;
+}
+.phone{
+	background: url(../images/pic1.png) no-repeat ;
+	position: absolute;
+    left: -32px;
+    bottom: 0;
+    width: 664px;
+    height: 763px;
+}
+
+#twobg{
+	background: url(../images/avd.jpg) no-repeat 0 0;
+	position: relative;
+}
+
+.txt2 h2{
+	background: url(../images/txt.png) no-repeat;
+}
+.txt2 p{
+	text-align: left;
+}
+.pic2{
+	background: url(../images/pic2.png) no-repeat;
+	position: absolute;
+    right: -100px;
+    bottom: 104px;
+    width: 597px;
+    height: 330px;
+}
+
+#thirdbg{
+	background: url(../images/blog.jpg) no-repeat 0 0;
+	position: relative;
+}
+.txt3{
+	right: 7px;
+}
+.txt3 h2{
+	background: url(../images/qblog_txt.png) no-repeat;
+}
+.txt3 p{
+	text-align: right;
+}
+.pic3{
+	background: url(../images/pic3.png) no-repeat;
+	position: absolute;
+    left: 88px;
+    bottom: 0;
+    width: 344px;
+    height: 506px;
+}
+
+/*底部显示*/
+.newfoot {
+    width: 100%;
+    height: 348px;
+    padding-top: 34px;
+    background: #2a2a2a;
+    font-size: 0.75em;
+}
+.qmaps {
+    width: 960px;
+    height: 205px;
+    margin: 0 auto;
+}
+
+.plats {
+    float: left;
+    width: 510px;
+    padding-left: 8px;
+}
+
+.plats h3 {
+    height: 50px;
+    color: #666;
+    font-size: 14px;
+}
+.map {
+    float: left;
+}
+
+.map h3 {
+    height: 25px;
+    color: #666;
+    font-size: 14px;
+}
+
+.map li {
+    line-height: 22px;
+}
+
+.qac {
+    width: 185px;
+}
+
+.qfaq {
+    width: 175px;
+}
+
+.qlink {
+    width: 80px;
+}
+
+.copyright {
+    clear: both;
+    width: 960px;
+    margin: 0 auto;
+    padding-top: 16px;
+    border-top: 1px solid #666;
+    line-height: 17px;
+    text-align: center;
+    color: #666;
+}
+
+.login_div {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 622px;
+    height: 368px;
+    margin: -184px 0 0 -311px;
+    z-index: 99999;
+}

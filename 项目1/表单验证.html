@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+</head>
+<body>
+    QQ号：<input type="text" id="txtQQ"><span></span><br>
+    邮箱：<input type="text" id="txtEMail"><span></span><br>
+    手机：<input type="text" id="txtPhone"><span></span><br>
+    生日：<input type="text" id="txtBirthday"><span></span><br>
+    姓名：<input type="text" id="txtName"><span></span><br>
+
+    <script>
+        var txtQQ = document.getElementById('txtQQ');
+        //当鼠标光标离开文本框的时候（onblur 事件会在对象失去焦点时发生}
+        txtQQ.onblur = function(){
+        	//验证用户输入的是否是QQ号
+        	var reg = /\d{5,12}/;
+        	var span = this.nextElementSibling;
+        	//检测用户输入的文本是匹配指定的模式（正则表达式）
+        	//test() 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false。
+        	if(!reg.test(this.value)){
+        		//不匹配  在文本框后面的span进行相应的提示
+        		span.innerText = '请输入正确的QQ格式';
+        		span.style.color = 'red';
+        	}else{
+        		//当匹配时，清空相应提示
+        		span.innerText = '';
+        		span.style.color = '';
+        	}
+        	
+        }
+
+        
+
+    </script>
+
+</body>
+</html>

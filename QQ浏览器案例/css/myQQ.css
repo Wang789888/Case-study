@@ -1,0 +1,50 @@
+
+
+
+.comein .p1 {
+	transform: translate(-50%, -50%)  translateZ(0px) rotateY(0deg);
+}
+.p1{
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%)  translateZ(500px) rotateY(-180deg);
+	width: 880px;
+	height: 320px;
+	background: url(../images/skin.gif) no-repeat;
+	transition: all 1s;
+}
+
+.p2{
+	width: 316px;
+ 	height: 360px;
+ 	text-align: center;
+ 	position: absolute;
+ 	top: 50%;
+ 	left: 50%;
+ 	transform: translateX(-50%) translateY(-50%) translateZ(-6000px) scale(0.1);
+ 	transition: all 2s;  /* 只要想做动画，就需要过渡效果 */
+}
+.txt{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -412px;
+	margin-top: -10px;
+	transform: translateZ(1200px) rotateY(-60deg);
+	transition: all 4s;
+}
+
+.box{
+	position: absolute;
+	width: 1440px;
+	height: 760px;
+	top: 50%;
+	left: 50%;
+	margin-left: -270px;
+	margin-top: -284px;
+	background-color: pink;
+	border: 1px solid #ccc;
+	transform: translateZ(1200px) rotateX(120deg);
+	transition: all 4s;
+}

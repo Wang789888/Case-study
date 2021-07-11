@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#box table{
+			border-collapse: collapse;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div id="box"></div>
+	
+	<script src="common.js"></script>
+	<script type="text/javascript">
+		var datas = [
+			{name: 'zs',subject:'语文',score: 90},
+			{name: 'zs1',subject:'语文',score: 90},
+			{name: 'zs2',subject:'语文',score: 90},
+		];
+		
+		
+		// var box = document.getElementById('box');
+		var headDates = ['姓名','科目','成绩','操作'];
+
+		// 创建表格
+		var table = document.createElement('table');
+		// 把table放到box中  其中$表示引用id='box'的对象
+		my$('box').appendChild(table);
+		table.border = '1px';
+		table.width = '400px';
+		// 创建表头
+		var thead = document.createElement('thead');
+		table.appendChild(thead);
+
+		var tr = document.createElement('tr');
+		thead.appendChild(tr);
+		tr.style.heigth = '40px';
+		tr.style.background
+
+		// 遍历头部数据，创建th
+		for(i = 0;i<headDates.length;i++){
+			var th = document.createElement('th');
+			tr.appendChild(th);
+			setInnerText(th,headDates[i]);
+		}
+		// 创建数据行
+		var tbody = document.createElement('tbody');
+		table.appendChild(tbody);
+		for(i= 0;i<datas.length;i++){
+			var data = datas[i];
+			// 前面声明过，在这里只需要赋值就行
+			tr = document.createElement('tr');
+			tbody.appendChild(tr);
+			// 遍历对象
+			for(var key in data){
+				var td = document.createElement('td');
+				tr.appendChild(td);
+				setInnerText(td,data[key]);
+			}
+			//生成删除对应的列
+			td = document.createElement('td');
+			tr.appendChild(td);
+
+			var link = document.createElement('a');
+			td.appendChild(link);
+			link.href = 'javascript:void(0)';  //让a链接没有起到实质性作用，死链接
+			setInnerText(link,'删除');
+
+			link.onclick = linkDelete;
+
+		}
+		function linkDelete(){
+			//removeChild()
+			//获取父元素
+			var tr = this.parentNode.parentNode;
+
+			//删除要删除的行
+			tbody.removeChild(tr);
+			return false;		
+		}
+
+	</script>
+
+</body>
+</html>

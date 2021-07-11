@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="点我" id="but">
+	<!-- <button id="but">点我</button> -->
+	<img src="images/banner_03.png" id="tu">
+
+	<script type="text/javascript">
+		 // 获取元素
+		var but = document.getElementById('but');
+		var tu = document.getElementById('tu');
+
+		flag = 1;
+		but.onclick = function(){
+			if (flag ===1) {
+				tu.src ="images/tou_03.png";
+				flag =2;
+			}else if (flag ===2) {
+				tu.src ="images/banner_03.png";
+				flag =1;
+			}
+			
+		}
+
+
+
+	</script>
+</body>
+</html>

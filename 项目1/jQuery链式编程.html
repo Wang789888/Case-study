@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//点击按钮，改变按钮的value值，鼠标进入到按钮中，按钮的宽高改变，鼠标离开的时候，按钮的背景颜色为绿色
+		$(function(){
+			$("#btn").click(function(){
+				$(this).val("改变了")；
+			}).mouseover(function(){
+				$(this).css({"width":"200px";"height":"100px"});
+			}).mouseout(function(){
+				$(this).css("backgroundClor":"green");
+			});	
+		});
+
+
+	</script>
+</head>
+<body>
+	<input type="button" value="显示效果" id="btn">
+</body>
+</html>

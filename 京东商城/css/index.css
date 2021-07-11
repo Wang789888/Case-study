@@ -1,0 +1,211 @@
+/*轮播图显示部分*/
+.view{
+	height: 480px;
+	position: relative;
+}
+
+.view1{
+	width: 190px;
+	height: 100%;
+	background-color: #6e6568;
+}
+.view1 .ad{
+	height: 480px;
+	width: 250px;
+	position: absolute;
+	left: -250px;
+	top: 0;
+}
+.view1 .ad-r{
+	position: absolute;
+	top: 0;
+	left: 250px;
+	z-index: 999;
+	width: 0;
+	height: 480px;
+	background: url(../images/ad-r.jpg) ;
+	transition: all 0.8s;/*过渡效果*/
+}
+ .ad:hover .ad-r{
+	width: 990px;
+}
+.view1 ul{
+	padding: 10px 0;
+}
+.view1 ul li{
+	height: 29px;
+	line-height: 26px;	
+	margin: 0 3px;
+	padding-left: 12px;
+}
+.view1 ul li:hover{
+	background-color: rgb(0,0,0,0.2);
+}
+.view1 a{
+	font-size: 14px;
+	color: #fff;
+}
+.view1 a:hover{
+	color: #f10215;
+}
+
+.view2{
+	width: 790px;
+	height: 100%;
+	margin-left: 10px;
+}
+.view2-top{
+	height: 340px;
+	position: relative;
+}
+.view2-top .arrow-l,.arrow-r{
+	position: absolute;
+	width: 30px;
+	height: 60px;
+	top: 50%;
+	transform: translateY(-50%);
+	background:rgb(0,0,0,0.2);
+	font-size: 30px;
+	line-height: 60px;
+	color: rgb(255,255,255,6);
+}
+.arrow-r{
+	right: 0;
+}
+.view2-top .dot{
+	width: 175px;
+	height: 20px;
+	line-height: 20px;
+	background-color: rgb(0,0,0,0.2);
+	border-radius: 10px;
+	position: absolute;
+	left: 50%;
+	transform: tarslateX(-50%);
+	padding-left: 8px: 
+	margin: 0;
+	bottom: 20px;
+}
+.dot li{
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+	background-color: #fff;
+	float: left;
+	margin: 2px;
+
+}
+.view2-bottom{
+	margin-top: 10px;
+	height: 130px;
+}
+
+.view3{
+	width: 190px;
+	height: 100%;
+	background-color: #fff;
+}
+
+/*轮播图右边显示部分*/
+.login{
+	height: 85px;
+	padding: 15px;
+	border-bottom: 1px solid #ccc;
+}
+.login-t{
+	width: 95px;
+	height: 60px;
+	line-height: 20px;
+	font-size: 12px;
+	position: relative;
+	color: #666;
+	padding-left: 60px;
+	white-space: nowrap;/*强制一行显示文字*/
+	overflow: hidden;/* 溢出部分隐藏*/
+	text-overflow: ellipsis;/*溢出部分以省略号形式显示*/
+}
+.login-t .login-img{
+	width: 50px;
+	height: 50px;
+	background:url(../images/sprite_userinfo@1x.png) no-repeat -70px 0;
+	left: 0;
+	top: 0;
+}
+.login-img img{
+	width: 40px;
+	border-radius: 50%;
+	position: absolute;
+	margin: 5px
+	left: 0;
+	top: 0;
+}
+.login-t a:hover{
+	color: #f10215;
+}
+.login-b a{
+	width: 70px;
+	height: 20px;
+	line-height: 20px;
+	margin-right: 3px;
+	text-align: center;
+	color: #f10215;
+	border: 2px solid #f10215;
+	font-size: 12px;
+}
+.login-b a:hover{
+	background-color: #f10215;
+	color: #fff;
+}
+.news{
+	height: 154px;
+	border-bottom: 1px solid #ccc;
+	padding: 7px 13px 0;
+	box-sizing: border-box;/*增加padding值后不会撑开盒子*/
+}
+.news-t{
+	height: 19px;
+	border-bottom: 1px solid #ccc;
+
+}
+.news-t a{
+	float: left;
+	height: 17px;
+	line-height: 17px;
+}
+.news-t .sale{
+	width: 38px;
+	border-right: 1px solid #ccc;
+}
+.news-t  .notice{
+	margin-left: 15px;
+}
+.news-t .more{
+	float: right;
+}
+.news-b ul{
+	padding: 0;
+}
+.news-b li{
+	height: 23px;
+	line-height: 23px;
+}
+
+.expend{
+	height: 209px;
+	overflow: hidden;
+}
+.expend ul{
+	height: 195;
+	padding: 0;
+}
+.expend li{
+	width: 47px;
+	height: 69px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	float: left;
+}
+.expend li a{
+	display: block;/*将元素显示为块级元素（占一定空间可设置宽高）*/
+	padding-top: 15px;
+	text-align: center;
+}

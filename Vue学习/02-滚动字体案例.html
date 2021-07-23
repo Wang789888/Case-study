@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+	<div id="run">
+		<input type="button" value="开始" @click = "go">
+		<input type="button" value="停止" @click = "stop">
+		<p>{{info}}</p>
+		
+	</div>
+	<script>
+		var vm = new Vue({
+			el: '#run',
+			data () {
+				return {
+					info:'你是年少的欢喜',
+					setIntervalId:null
+				}
+			},
+			methods: {
+				go(){
+					//如果现在有定时器在运行，直接返回
+					if(this.setIntervalId != null){
+						return;
+					}
+					//开始定时器
+					this.setIntervalId = setInterval(()=>{
+						this.info = this.info.substring(1) + this.info.substring(0,1);
+					},500)
+				},
+				stop(){
+					console.log(this.setIntervalId);
+					clearInterval(this.setIntervalId);
+				}
+			}
+		})
+	</script>
+</body>
+</html>

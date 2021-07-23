@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./lib/vue-2.4.0.js"></script>
+	<style>
+		[v-cloak] {
+			display:none;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<!-- 使用v-cloak能够解决插值表达式闪烁的问题 -->
+		<p v-cloak>{{msg}}</p>
+		<h4 v-text = "msg"></h4>
+		<!-- 
+			1、默认v-text是没有闪烁问题
+			2、v-text会覆盖元素中原本的内容，但插值表达式直回替换自己的这个占位符不会清空整个元素内容
+		-->
+	</div>
+	<script>
+		//创建Vue的实例
+		var vm = new new Vue({
+			el:'#app', 
+			data () {
+				return {
+					msg:'hello word 111' //通过Vue提供的指令，很方便就能把数据渲染到页面上，程序员不再手动的操作Dom元素[前端的Vue之类的框架，不提倡我们去手动操作Dom元素]
+				}
+			}
+		})
+	</script>
+</body>
+</html>  

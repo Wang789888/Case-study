@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./lib/vue-2.4.0.js"></script>
+  <script src="./lib/vue-resource-1.3.4.js"></script>
+  <link rel="stylesheet" href="./lib/bootstrap-3.3.7.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">添加品牌</h3>
+      </div>
+      <div class="panel-body form-inline">
+        <label>
+          Name:
+          <input type="text" v-model="name" class="form-control">
+        </label>
+        <input type="button" value="添加" @click="add" class="btn btn-primary">
+      </div>
+    </div>
+    <table class="table table-bordered table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Ctime</th>
+          <th>Operation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in list" :key="item.id">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.ctime}}</td>
+          <td>
+            <a href="" @click.prevent="del(item.id)">删除</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    Vue.http.option.root = 'http://vue.studyit.io/';
+    //全局启用emlateJSON选项
+    Vue.http.option.emulateJson = true;
+
+    new vm = new Vue({
+      el:'#app',
+      data () {
+        return {
+          name: '',
+          //存放所有品牌列表的数组
+          list: []
+        }
+      },
+      //当vm实例的data和methods初始化完毕后，vm实例会自动执行created这个声明周期函数
+      created () {
+        this.getAllList()
+      },
+      methods: {
+        //获取所有的品牌列表
+        getAllList(){
+          /*分析:
+          1.导入Vue-resource包，通过this.$http发数据请求
+          2.根据接口API文档，获取列表时发get请求
+          3. this.$http.get('url').then(function(result){})    通过then指定回调函数之后，在回调函数总，可以拿到数据返回服务器的result
+          4. 判断result.status 是否等于0，如等于0就可以把result.message赋值给this.list;反之提示获取数据失败
+          */
+          
+          this.$http.get('api/getprodlist').then(result => {
+            //通过$http获取的数据，都在result.body中放着
+            var result = result.body
+            if(result.status === 0){
+              this.list = result.message
+            }else{
+              alert('获取数据失败')
+            } 
+          })
+        },
+        //添加品牌列表到后台服务器
+        add(){
+         /*  
+         1.根据数据API接口，post请求 this.$http.post
+         2.this.$http.post('url', { name: this.name }, { emulateJSON: true }).then(result =>){}
+         参数1：请求地址
+         参数2：要提交给服务器的数据，要以对象形式提交给服务器
+         参数3：配置对象，要以那种表单数据类型提交过去,{emulateJSON: true }以普通表单格式，将数据提交给服务器
+         3.post方法中，.then设置成功的回调函数，如果想要成功结果，需要result.body
+           */
+          this.$http.post('api/addproduct',{name:this.name}).then(result =>{
+            if (result.body.status === 0) {
+              //添加成功后，需手动再调用getAllList就能刷新品牌列表
+              this.getAllList()
+              //清空name
+              this.name = ''
+            } else {
+              alert('添加失败')
+            }
+          })
+          
+        },
+        //删除品牌
+        del(id){
+          this.$http.get('api/delproduct/' + id).then(result => {
+            if (result.body.status === 0) {
+              //删除成功
+              this.getAllList()
+            }else{
+              alert('删除失败')
+            }
+          })
+        }
+
+      }
+    })
+  </script>
+  
+</body>
+
+</html>

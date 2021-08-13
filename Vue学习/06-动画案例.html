@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./lib/vue-2.4.0.js"></script>
+  <style>
+    .v-enter,
+    .v-leave-to{
+      opacity: 0;
+    }
+    .v-enter-active,
+    .v-leave-active{
+      transition: all 1s ease;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <input type="button" value="切换" @click="show =!show">
+    <transition >
+      <h3 v-if ="show">这是一段话</h3>
+    </transition>
+  </div>
+  <script>
+      var vm = new Vue({
+        el: '#app',
+        data () {
+          return {
+            show:true
+          }
+        },
+        methods: { }
+      });
+  </script>
+</body>
+</html>

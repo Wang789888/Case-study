@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./lib/vue-2.4.0.js"></script>
+  <style>
+    li{
+      border: 1px solid #999;
+      margin: 5px;
+      line-height: 35px;
+      padding-left: 5px;
+      font-size: 12px;
+      width: 100%;
+    }
+    li:hover{
+      background-color: aqua;
+    }
+    .v-enter,
+    .v-leave-to{
+      opacity: 0;
+      transform: translateY(80px);
+    }
+    .v-enter-active,
+    .v-leave-active{
+      transition: all 1s ease;
+    }
+    /* .v-move与.v-leave-active配合使用，设置元素后续移动 */
+    .v-move{
+      transition: all 1s ease;
+    }
+    .v-leave-active{
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div>
+      <label >
+        id:
+        <input type="text" v-model="id">
+      </label>
+      <label >
+        name:
+        <input type="text" v-model="name">
+      </label>
+      <input type="button" value="添加" @click="add">
+    </div>
+
+    <!-- 在实现列表过渡的时候，如果需要过渡的元素是通过v-for循环渲染出来的，不能使用transition包裹，需要使用transitionGroup -->
+    <transition-group tag="" name="" appear tag="ul">
+      <li v-for="(item,i) in lists" :key="item.id" @click="del(i)">
+        {{item.id}}-----{{item.name}}
+      </li>
+    </transition-group> 
+    
+  </div>
+
+  <script>
+    new Vue({
+      el:'#app',
+      data () {
+        return {
+          id:'',
+          name:'',
+          lists:[
+            {id: 1,name:'张一'},
+            {id: 2,name:'张二'},
+            {id: 3,name:'张三'},
+            {id: 4,name:'张四'},
+            {id: 5,name:'张五'},
+          ]
+        }
+      },
+      methods: {
+        add(){
+          this.lists.push({id: this.id,name: this.name})
+          this.id = this.name =''
+        },
+        del(i){
+          this.lists.splice(i,1)
+        }
+      }
+    })
+  </script>
+
+
+</body>
+</html>

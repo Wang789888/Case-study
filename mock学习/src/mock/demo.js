@@ -1,5 +1,5 @@
 import Mock from 'mockjs'
-
+// Mock.Random 是一个工具类，用于生成各种随机数据
 const Random = Mock.Random;
 
 function getData(){
@@ -16,5 +16,5 @@ function getData(){
     data: datalist
   }
 }
-const data = Mock.mock('/demo',getData)
+const data = Mock.mock('/demo','get',getData)
 export default {data};
